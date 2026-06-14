@@ -1,20 +1,12 @@
-INTRODUCTION
+Probelm statement :  most basic memory implementations only support single port RAM, which allows only one operation — either a read or a write — at any given clock cycle. This creates a serious bottleneck in performance when the system demands simultaneous access to memory from multiple sources. in a pipelined processor, the CPU needs to fetch an instruction and read/write data at the same time.
 
-This project presents the design and implementation of Single Port and Dual Port RAM using Verilog HDL. 
-The designs are simulated and verified using waveform analysis through a VCD (Value Change Dump) file.
+Tools : Vivado/EDA Playground,GTKwave
 
-Single Port RAM allows one operation at a time — either a read or a write — through a single data bus and address line. It is simple, area-efficient, and widely used in basic memory applications.
+Design : 
 
-Dual Port RAM supports simultaneous read and write operations through two independent ports, making it ideal for high-performance systems where two processes need to access memory concurrently — such as FIFOs, CPUs, and DSP applications.
+1.designed a Dual Port RAM with two fully independent ports — Port A and Port B — each having its own clock, address bus, data bus, and write enable signal. This allows two separate operations to happen simultaneously in the same clock cycle without any conflict, completely eliminating the bottleneck that single port RAM suffers from.
+                               
 
-Key Features of This Project
+ 2. By giving each port its own independent clock signal (clk_a and clk_b), the dual port RAM can interface with two different modules operating at different frequencies, making it suitable for real-world multi-clock digital systems like FIFOs and communication interfaces.
 
-Synthesizable Verilog RTL code for both Single and Dual Port RAM.
-
-Supports synchronous read and write operations.
-
-Dual port design enables simultaneous access from two independent sources.
-
-Testbench driven simulation with waveform output (.vcd).
-
-Verified using EPWave waveform viewer.
+3.To ensure the design works correctly, I wrote a dedicated testbench that applies different read and write combinations on both ports and captures the output as a VCD (Value Change Dump) file. I then verified the waveforms using GTKWave, confirming that both ports operate correctly and independently without interfering with each other.
