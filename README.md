@@ -1,4 +1,4 @@
-Probelm statement :  most basic memory implementations only support single port RAM, which allows only one operation — either a read or a write — at any given clock cycle. This creates a serious bottleneck in performance when the system demands simultaneous access to memory from multiple sources. in a pipelined processor, the CPU needs to fetch an instruction and read/write data at the same time.
+Probelm statement  :  most basic memory implementations only support single port RAM, which allows only one operation — either a read or a write — at any given clock cycle. This creates a serious bottleneck in performance when the system demands simultaneous access to memory from multiple sources. in a pipelined processor, the CPU needs to fetch an instruction and read/write data at the same time.
 
 Tools : Vivado/EDA Playground,GTKwave
 
