@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-
+`include "ram.v"
 module single_port_ram_tb;
   reg [7:0] data;
   reg [5:0] addr;
